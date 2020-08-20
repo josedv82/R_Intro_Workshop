@@ -1,4 +1,4 @@
-# Introductory course to R for Performance Coaches
+# R Programming Introductory Workshop
 
 This was a 1hr introductory workshop on the basics of R programming for S&C / performance coaches without any previous experience with R.
 
