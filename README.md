@@ -41,7 +41,7 @@ To summarise the relationship between these two elements, try to think of R like
 
 #### The image below is a summary of what the Rstudio interface looks like after you install it and some of the background behind the different parts of the software.
 
-![](slide1.png)
+![](Slide1.PNG)
 
 ***
 
