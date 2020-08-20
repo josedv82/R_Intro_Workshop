@@ -122,7 +122,13 @@ The **Tidyverse** is a very important package in R. In fact, it is more than jus
 
 # Importing your data
 
-We are going to load a few datasets and give them names, so that we can call them later in the analysis process if we need to. To name something in R just follow this pattern: **name** `<-` **something**
+Before inforting the data, download the 3 files we will be using to your working directory. 
+
+[File 1](https://github.com/josedv82/R_Intro_Workshop/blob/master/strength.csv)
+[File 2](https://github.com/josedv82/R_Intro_Workshop/blob/master/speed.xlsx)
+[File 3](https://github.com/josedv82/R_Intro_Workshop/blob/master/power.csv)
+
+We are going to load the 3 datasets and give them names, so that we can call them later in the analysis process if we need to. To name something in R just follow this pattern: **name** `<-` **something**. Uou can also use `=` instead of `<-`
 
 ```r
 #We will use *read.csv()* and *read_excel()* functions ro import our files. Remember the working directory in R studio has to be set to the folder where your files are, otherwise we would need to specify the full path of the file.
