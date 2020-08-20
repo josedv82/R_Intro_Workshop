@@ -1,13 +1,13 @@
 # R Programming Introductory Workshop
 
-This was a 1hr introductory workshop on the basics of R programming for S&C / performance coaches without any previous experience with R.
+This was a 1hr workshop tailored towards S&C / performance coaches without any previous experience with R. This course provides an overview of first steps and common tasks coaches will need to complete when using R for data analysis.
 
 Link to the course Rmd Script [here](https://github.com/josedv82/R_for_Strength_Coaches/blob/master/Rstudio%20Workshop.Rmd)
   
 ***  
   
 
-# What we will learn
+# What are we going to be learning
 
 * Basic intro to R and Rstudio
 * The difference between packages and functions
