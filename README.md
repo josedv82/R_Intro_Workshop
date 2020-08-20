@@ -103,7 +103,7 @@ Let's load the packages we are going to use in this session
 
 
 ```r
-
+#to load packages use *library(package)*
 
 library(tidyverse) #loads all the packgages in the tidyverse ecosystem
 library(readxl) #loads the readxl package, which makes it easy to import xlsx files.
@@ -124,6 +124,7 @@ The **Tidyverse** is a very important package in R. In fact, it is more than jus
 We are going to load a few datasets and give them names, so that we can call them later in the analysis process if we need to. To name something in R just follow this pattern: **name** `<-` **something**
 
 ```r
+#We will use *read.csv()* and *read_excel()* functions ro import our files. Remember the working directory in R studio has to be set to the folder where your files are, otherwise we would need to specify the full path of the file.
 
 strength <- read.csv("strength.csv") #loading max strength data and calling it "strength"
 power <- read.csv("power.csv") #loading power data and calling it "power"
@@ -152,8 +153,8 @@ Now that our the data is loaded  we are ready to start working with it. Real dat
 
 #Prepare the strength dataset
 strength.C <- strength %>% 
-  select(Date, Player, maxStrength = Estimated.1RM) %>% 
-  mutate(Date = as.Date(Date, origin = "1970-01-01", format = "%m/%d/%Y"))
+  select(Date, Player, maxStrength = Estimated.1RM) %>% #select the columns we want
+  mutate(Date = as.Date(Date, origin = "1970-01-01", format = "%m/%d/%Y")) #modify the format of the date
 
 #prepare the power dataset
 power.c <- power %>% 
@@ -182,7 +183,7 @@ You can *pipe* your code when the Tidyverse package is loaded.
 <br>
  
 
-# Looking at your data
+# Familiarise yourself with the data
 
 The next two functions will let you have a quick look at your data. However, they return objects that are hard to manipulate for futher analysis. They are just useful to familiarise yourself with the data you are about to work with.
 
@@ -194,7 +195,7 @@ str(power.c)
 #give me a quick summary of my data
 summary(power.c)
 
-#select a specific column in my data and then (%>%) give me summary of that column
+#select a specific column and then (%>%) give me summary of that column
 power.c$relPower %>% summary()
 
 
@@ -322,7 +323,7 @@ playerA4 %>%
   ggtitle("2019 - Player A4 Relative Power Progression - Bar chart")
 
 
-#line chart showing the results of all his assessments in 2019
+#actually, a line chart showing the results of all his assessments in 2019 may be a better choice
 playerA4 %>%
   
   filter(Date <= "2020-01-01") %>%
@@ -355,7 +356,7 @@ plot <- power.c %>%
 
 plot
 
-#Facetting by player allows to show smallet graph for each player. This is called small multiples.
+#Facetting by player allows to break down the graph for each player. This is called small multiples.
 
 plot + facet_wrap(~Player)
 
@@ -373,7 +374,7 @@ power.c %>%
   ggtitle("2019 - Team1 Pitchers Relative Power Progression - Line Chart")
 
 
-# boxplot chart are a good way to vosualize summaries of your data
+# boxplot charts are a good way to visualize summaries of your data. If gives you an idea of range, central tendency as well as outliers. Here we will plot each data point using *geom_jitter()* and boxplots using *geom_boxplot()*
 
 power.c %>%
   
@@ -385,7 +386,7 @@ power.c %>%
   ggtitle("2019 - Team1 Pitchers  Relative Power - Boxplot Chart") +
   theme(axis.text.x = element_text(angle = 90))
 
-# reorder for better understanding from worse to better
+# We can reorder the items in any order. I this case we are going to reorder by the median value
 
 power.c %>%
   
@@ -397,7 +398,7 @@ power.c %>%
   ggtitle("2019 - Team1 Pitchers  Relative Power - Boxplot Chart") +
   theme(axis.text = element_text(angle = 90))
 
-#filp it to make it even easier to understand
+#flip the axis. Does it look better?
 
 power.c %>%
   
@@ -430,18 +431,18 @@ Notice how all 3 datasets have a common variable (Player) which will be the comm
 
 ```r
 
-#first let's remove the date columns as we won't use it
+#first let's summarise by max values for each player for each of our assessments
 
 st <- strength.C %>% group_by(Player) %>% summarise(maxStrength = max(maxStrength))
 po <- power.c %>% group_by(Player) %>% summarise(maxPower = max(relPower))
 sp <- speed.c %>% group_by(Player) %>% summarise(maxSpeed = max(maxSpeed))
 
-#now let's join the 3 datasets by player
+#now let's join the 3 datasets. Notice all three data sets have a common variable: Player
 
 all.data <- full_join(st, po, by = c("Player")) %>% full_join(sp, by = c("Player"))
 all.data
 
-#remove the NAs on the data with na.omit() 
+#we can remove the NAs on the data with na.omit() 
 
 all.data <- all.data %>% na.omit()
 all.data
@@ -466,7 +467,7 @@ The next step in our data analysis is to start looking into relationships betwee
 
 ```r
 
-#correlation between power and strength
+#correlation between power and strength using the function *cor()*
 
 cor(all.data$maxStrength, all.data$maxPower)
 
@@ -474,11 +475,11 @@ cor(all.data$maxStrength, all.data$maxPower)
 
 <br>  
     
-In that case there is a very small negative correlation. Let's try and visualize it see if that helps us better understand this relationship..
+We know the correlation. Let's try and visualize it. Sometimes it can help us better understand this relationship..
 
 ```r
 
-# scatterplot between the two variables
+# let's build a scatterplot between the two variables.
 
 all.data %>%
   
