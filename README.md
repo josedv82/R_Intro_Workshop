@@ -1,6 +1,6 @@
 # Introduction to R - Basic Concepts
 
-This was a 1hr workshop tailored towards S&C / performance coaches without any previous experience with R. This course provides an overview of first steps and common tasks coaches will need to complete when using R for data analysis. This was a live event, however, I summarised content below in a non-technical way and hopefully easy to follow. 
+This was a 1hr workshop tailored towards S&C / performance coaches without any previous experience with R. This course provides an overview of first steps and common tasks coaches will need to complete when using R for data analysis. This was a live event, but I tried to summarise the content below in a non-technical way and hopefully easy to follow. 
 
 Link to the course Rmd Script [here](https://github.com/josedv82/R_for_Strength_Coaches/blob/master/Rstudio%20Workshop.Rmd)
   
