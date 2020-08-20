@@ -5,7 +5,9 @@ This was a 1hr workshop tailored towards S&C / performance coaches without any p
 Link to the course Rmd Script [here](https://github.com/josedv82/R_for_Strength_Coaches/blob/master/Rstudio%20Workshop.Rmd)
   
 ***  
-  
+<br>
+<br>
+<br>  
 
 # What are we going to be learning
 
@@ -19,6 +21,9 @@ Link to the course Rmd Script [here](https://github.com/josedv82/R_for_Strength_
 * Joining different datasets
 * Basic data modeling
 
+<br>
+<br>
+<br>
 
 # Programming in R
 
@@ -124,9 +129,9 @@ The **Tidyverse** is a very important package in R. In fact, it is more than jus
 
 Before inforting the data, download the 3 files we will be using to your working directory. 
 
-[File 1](https://github.com/josedv82/R_Intro_Workshop/blob/master/strength.csv)
-[File 2](https://github.com/josedv82/R_Intro_Workshop/blob/master/speed.xlsx)
-[File 3](https://github.com/josedv82/R_Intro_Workshop/blob/master/power.csv)
+[File 1](https://github.com/josedv82/R_Intro_Workshop/blob/master/strength.csv)  
+[File 2](https://github.com/josedv82/R_Intro_Workshop/blob/master/speed.xlsx)  
+[File 3](https://github.com/josedv82/R_Intro_Workshop/blob/master/power.csv)  
 
 We are going to load the 3 datasets and give them names, so that we can call them later in the analysis process if we need to. To name something in R just follow this pattern: **name** `<-` **something**. Uou can also use `=` instead of `<-`
 
