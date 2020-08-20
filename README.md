@@ -1,4 +1,4 @@
-# Introduction to R - First Steps
+# Introduction to R - Basic Concepts
 
 This was a 1hr workshop tailored towards S&C / performance coaches without any previous experience with R. This course provides an overview of first steps and common tasks coaches will need to complete when using R for data analysis.
 
