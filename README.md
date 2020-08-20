@@ -320,7 +320,9 @@ If you want to learn more about **ggplot2** you can visit this [link.](https://g
 
 <br>
 
-Let's use **playerA4** data frame for the first example. We are going to build a few visuals and tweak them to make them more impactful. 
+Let's use **playerA4** data frame for the first example. We are going to build a few visuals and tweak them to make them more impactful.  
+
+To use ggplot we need to call the `ggplot()` function. Within the ggplot function we will add the aesthetics of the graph, i.e. the data that goes into x and y axis. Also notice that once you are within ggplot() you will have to use `+` instead of `%>%` to join your code. Let's work through it.
 
 ```r
 
