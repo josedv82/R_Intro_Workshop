@@ -1,5 +1,6 @@
-# R for Strength & Conditioning Coaches
-This was a 1hr introductory workshop on the basics of R programming for Strength Coaches without any previous experience with R.
+# Introductory course to R for Performance Coaches
+
+This was a 1hr introductory workshop on the basics of R programming for S&C / performance coaches without any previous experience with R.
 
 Link to the course Rmd Script [here](https://github.com/josedv82/R_for_Strength_Coaches/blob/master/Rstudio%20Workshop.Rmd)
   
