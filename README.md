@@ -75,10 +75,10 @@ There are a few reasons why R is a good option for statistical analysis. Some of
 * It is free and open source. It is constantly evolving and getting better.
 * There are packages (thousands of them) that provide functions for users to perform different tasks. 
 * You can write your own functions (and packages) if you want to, to suit your needs. This will simplify your code if you have to repeat certain steps a few times in your script.
-* Automate your script. Unlike excel, you can fully automate your script without the need to repeat it every time you need something.
+* Automate your script. You can fully automate your script without the need to repeat it every time you need something. Think about automating your reports.
 * It handles big volumes of data really well.
 * You can design powerful graphics. There are some packages that can help you achieve almost anything you want.
-* You can use it to create reports (like this document) or even full apps like our AMS.
+* You can use it to create reports (like this document) or even full apps. Think of this as your own AMS.
 
 <br>
 
