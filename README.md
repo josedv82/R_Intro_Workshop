@@ -102,7 +102,7 @@ Let's load the packages we are going to use in this session
 
 
 
-```{r Loading Libraries, warning=FALSE}
+```r
 
 
 library(tidyverse) #loads all the packgages in the tidyverse ecosystem
@@ -123,7 +123,7 @@ The **Tidyverse** is a very important package in R. In fact, it is more than jus
 
 We are going to load a few datasets and give them names, so that we can call them later in the analysis process if we need to. To name something in R just follow this pattern: **name** `<-` **something**
 
-```{r Importing Data, message=FALSE, warning=FALSE}
+```r
 
 strength <- read.csv("strength.csv") #loading max strength data and calling it "strength"
 power <- read.csv("power.csv") #loading power data and calling it "power"
@@ -148,7 +148,7 @@ R allows to import many different types of files, like .pdf, .txt, .csv, .tsv, .
 
 Now that our the data is loaded  we are ready to start working with it. Real data is always messy and you will have to do some sort of cleaning and tyding all the time. We are going to clean each of those datasets to facilitate our analysis later.  
 
-```{r Clean and prepare data, message=FALSE, warning=FALSE}
+```r
 
 #Prepare the strength dataset
 strength.C <- strength %>% 
@@ -186,7 +186,7 @@ You can *pipe* your code when the Tidyverse package is loaded.
 
 The next two functions will let you have a quick look at your data. However, they return objects that are hard to manipulate for futher analysis. They are just useful to familiarise yourself with the data you are about to work with.
 
-```{r Simple Data Familiarization, message=FALSE, warning=FALSE}
+```r
 
 #show me the structure of my data
 str(power.c)
@@ -212,7 +212,7 @@ power.c$relPower %>% summary()
 
 Let's look at some simple statistics. First we are going to filter the data and focus on PlayerA4 only.
 
-```{r Basic Stats, echo=TRUE, message=FALSE, warning=FALSE}
+```r
 
 #filter by player
 playerA4 <- power.c %>% filter(Player == "A4") 
@@ -225,7 +225,7 @@ playerA4
     
 Now we are going to run simple statistics on this data using the function **summarise**:
 
-```{r Basic Stats2, message=FALSE, warning=FALSE, paged.print=FALSE}
+```r
 
 #summarise by max power
 playerA4 %>% summarize(maxPower = max(relPower))
@@ -253,7 +253,7 @@ playerA4 %>% slice(which.min(Date))
     
 Usually you will have to look at more than one player at a time. Let's try and do similar analysis with all players in the roster. Notice how in all the operations below we are `grouping the data set by player`, so that statistics are calulated for each player individually.
 
-```{r Group Stats, message=FALSE, warning=FALSE}
+```r
 
 #group analysis: Summarise + arrange
 power.c %>%
@@ -309,7 +309,7 @@ If you want to learn more about **ggplot2** you can visit this [link.](https://g
 
 Let's use **playerA4** data frame for the first example. We are going to build a few visuals and tweak them to make them more impactful. 
 
-```{r Data Visualization, fig.height=8, fig.width=10, message=FALSE, warning=FALSE}
+```r
 
 #create bar chart showing the results of all his assessments in 2019
 
@@ -341,7 +341,7 @@ playerA4 %>%
 Let's do other visualizations with the bigger dataset including all players in the sample
 
 
-```{r Data Visualization2, fig.height=8, fig.width=10, message=FALSE, warning=FALSE}
+```r
 
 # what is the distribution of the data
 
@@ -428,7 +428,7 @@ More often than not you will need to work with different datasets. So you will h
 Notice how all 3 datasets have a common variable (Player) which will be the common column we will use for joining.
 
 
-```{r Joining Datasets, message=FALSE, warning=FALSE}
+```r
 
 #first let's remove the date columns as we won't use it
 
@@ -464,7 +464,7 @@ As you can see, by joining data from different assessments you can quickly start
 
 The next step in our data analysis is to start looking into relationships between variables. Let's do that by looking at the correlation between strength and power. We can do this using the function *cor()*, which takes to arguments.  
 
-```{r Correlation, message=FALSE, warning=FALSE}
+```r
 
 #correlation between power and strength
 
@@ -476,7 +476,7 @@ cor(all.data$maxStrength, all.data$maxPower)
     
 In that case there is a very small negative correlation. Let's try and visualize it see if that helps us better understand this relationship..
 
-```{r Relationship between variables, message=FALSE, warning=FALSE}
+```r
 
 # scatterplot between the two variables
 
@@ -502,7 +502,7 @@ all.data %>%
     
 To finish this workshop, let's look at speed vs strength. Remember the data has been altered and de-identified so the correlations will not make sense, but for learning purposes:
 
-```{r Relationship Between Variables2, message=FALSE, warning=FALSE}
+```r
 
 #correlation between strength and speed
 cor(all.data$maxStrength, all.data$maxSpeed)
