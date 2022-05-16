@@ -92,7 +92,7 @@ Most of the above bullet points also apply to other programming languages (Pytho
 # Packages / Functions
 
 
-Packages are `group of functions` packaged together. They are also called *libraries*. There are thousands of packages in R. Some for data manipulation, some for statistical analysis, some for data visualization and even specific packages to create reports and full applications.  
+Packages are `group of functions` packaged together. There are thousands of packages in R. Some for data manipulation, some for statistical analysis, some for data visualization and even specific packages to create reports and full applications.  
 
 `Functions perform specific taks` (*i.e: calculate the mean of a list of numbers*). They are similar to the functions you use in Excel for example. In R, functions follow the following pattern **function_name(something)**.  
 
